@@ -1,0 +1,371 @@
+{
+	"info": {
+		"_postman_id": "cabb2d37-f24e-4fb1-9caf-7fd7e8f0f576",
+		"name": "Tools",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "40554260"
+	},
+	"item": [
+		{
+			"name": "Sign Up and login",
+			"item": [
+				{
+					"name": "SignUp 1",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"name\": \"mazen\", \"email\": \"mazenwael575@gmail.com\", \"password\": \"123123123\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/signup"
+					},
+					"response": []
+				},
+				{
+					"name": "Login 1",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\": \"mazenwael575@gmail.com\", \"password\": \"123123123\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/login"
+					},
+					"response": []
+				},
+				{
+					"name": "SignUp 2",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"name\": \"mohamed\", \"email\": \"mohamed575@gmail.com\", \"password\": \"123123123\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/signup"
+					},
+					"response": []
+				},
+				{
+					"name": "Login 2",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\": \"mohamed575@gmail.com\", \"password\": \"123123123\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/login"
+					},
+					"response": []
+				},
+				{
+					"name": "SignUp 3",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"name\": \"amira\", \"email\": \"amira575@gmail.com\", \"password\": \"123123123\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/signup"
+					},
+					"response": []
+				},
+				{
+					"name": "Login 3",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\": \"amira575@gmail.com\", \"password\": \"123123123\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/login"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "events",
+			"item": [
+				{
+					"name": "Event Creation",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-User-ID",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Team Building Workshop\",\r\n  \"description\": \"Quarterly team building activities and workshops\",\r\n  \"location\": \"Conference Room A, 123 Main St, Tech Park\",\r\n  \"startTime\": \"2025-11-20T14:00:00+02:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/events"
+					},
+					"response": []
+				},
+				{
+					"name": "Organized events",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-User-ID",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:8080/events/organized"
+					},
+					"response": []
+				},
+				{
+					"name": "Invited events",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-User-ID",
+								"value": "2",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:8080/events/invited"
+					},
+					"response": []
+				},
+				{
+					"name": "Event Invitation",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-User-ID",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": 3,\r\n  \"role\": \"attendee\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/events/4/invite"
+					},
+					"response": []
+				},
+				{
+					"name": "Event attendees",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-User-ID",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:8080/events/4/attendees"
+					},
+					"response": []
+				},
+				{
+					"name": "Attendence acceptance or decline",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-User-ID",
+								"value": "3",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": 3,\r\n  \"status\": \"going\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/events/4/attendance"
+					},
+					"response": []
+				},
+				{
+					"name": "Event Deletion",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-User-ID",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:8080/events/3"
+					},
+					"response": []
+				},
+				{
+					"name": "Tasks Assignment",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-User-ID",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Prepare workshop materials\",\r\n  \"description\": \"Create slides and exercises for the workshop\",\r\n  \"dueDate\": \"2025-11-15T14:00:00+02:00\",\r\n  \"assigneeId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/events/4/tasks"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "search",
+			"item": [
+				{
+					"name": "http://localhost:8080/search?q=workshop&from=2025-11-01&to=2025-12-31&role=organizer",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-User-ID",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/search?q=workshop&from=2025-11-01&to=2025-12-31&role=organizer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "workshop"
+								},
+								{
+									"key": "from",
+									"value": "2025-11-01"
+								},
+								{
+									"key": "to",
+									"value": "2025-12-31"
+								},
+								{
+									"key": "role",
+									"value": "organizer"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
